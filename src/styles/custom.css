@@ -27,33 +27,13 @@
 	--sl-color-black: #181818;
 }
 
-@font-face {
-    font-family: "theoryengine";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("/fonts/theoryengine.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "theoryenginefb";
-    src: url("/fonts/theoryenginefb.woff2");
-}
-
 .social-icons::after {
     display: none;
 }
 
 h1 {
-    font-family: theoryengine,theoryenginefb,system-ui,arial;
-    font-feature-settings: normal;
     font-size: 2.25rem;
-    font-style: normal;
-    font-variation-settings: normal;
     font-weight: 700;
-    letter-spacing: -0.9px;
-    color: white;
-    text-wrap: balance;
 }
 
 .content-panel {

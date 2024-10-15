@@ -3,6 +3,7 @@ title: Welcome to Theory Engine docs
 template: doc
 tableOfContents: false
 editUrl: false
+lastUpdated: false
 ---
 
-![Alt text](../../assets/wip.png)
+![](../../assets/wip.png)

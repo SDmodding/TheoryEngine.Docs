@@ -32,12 +32,12 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("https://github.com/SDmodding/TheoryEngine.Docs/raw/refs/heads/main/src/assets/theoryengine.woff2") format("woff2");
+    src: url("/fonts/theoryengine.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "theoryenginefb";
-    src: url("https://github.com/SDmodding/TheoryEngine.Docs/raw/refs/heads/main/src/assets/theoryenginefb.woff2");
+    src: url("/fonts/theoryenginefb.woff2");
 }
 
 .social-icons::after {

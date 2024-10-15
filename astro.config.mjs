@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
+	site: 'https://sdmodding.github.io/',
+	base: 'TheoryEngine.Docs',
 	integrations: [
 		starlight({
 			favicon: '/favicon.png',

@@ -3,7 +3,7 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
 	site: 'https://sdmodding.github.io/',
-	base: 'TheoryEngine.Docs',
+	//base: 'TheoryEngine.Docs',
 	integrations: [
 		starlight({
 			favicon: '/favicon.png',

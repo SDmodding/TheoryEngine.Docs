@@ -1,15 +1,15 @@
 :root, ::backdrop, 
 :root[data-theme='light'], [data-theme='light']::backdrop {
-  --sl-hue-base: 17;
-  --sl-color-white: oklch(90% 0.008 var(--sl-hue-base));
-  --sl-color-gray-1: oklch(80% 0.018 var(--sl-hue-base));
-  --sl-color-gray-2: oklch(80% 0.018 var(--sl-hue-base));
-  --sl-color-gray-3: oklch(65% 0.013 var(--sl-hue-base));
-  --sl-color-gray-4: oklch(48% 0.009 var(--sl-hue-base));
-  --sl-color-gray-5: oklch(29% 0.005 var(--sl-hue-base));
-  --sl-color-gray-6: oklch(23% 0.004 var(--sl-hue-base));
-  --sl-color-gray-7: oklch(20.5% 0.002 var(--sl-hue-base));
-  --sl-color-black: oklch(18% 0.002 var(--sl-hue-base));
+  --sl-hue-base: 295;
+  --sl-color-white: oklch(90% 0 var(--sl-hue-base));
+  --sl-color-gray-1: oklch(80% 0 var(--sl-hue-base));
+  --sl-color-gray-2: oklch(80% 0 var(--sl-hue-base));
+  --sl-color-gray-3: oklch(65% 0 var(--sl-hue-base));
+  --sl-color-gray-4: oklch(48% 0 var(--sl-hue-base));
+  --sl-color-gray-5: oklch(29% 0 var(--sl-hue-base));
+  --sl-color-gray-6: oklch(23% 0 var(--sl-hue-base));
+  --sl-color-gray-7: oklch(20.5% 0 var(--sl-hue-base));
+  --sl-color-black: oklch(18% 0 var(--sl-hue-base));
 
   --sl-hue-orange: 84;
   --sl-color-orange-low: oklch(24% 0.01 var(--sl-hue-orange));

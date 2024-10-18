@@ -2,8 +2,6 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import ThemeRapide from './plugins/theme-rapide'
 
-import { Icon } from '@astrojs/starlight/components';
-
 export default defineConfig({
 	site: 'https://sdmodding.github.io/',
 	base: 'TheoryEngine.Docs',
@@ -35,24 +33,7 @@ export default defineConfig({
 					label: 'Quark',
 					autogenerate: { directory: 'quark' },
 				},
-			],
-			navbar: [
-			        {
-			          	label: 'Home',
-			          	href: '/',
-			          	icon: <Icon name="home" />,
-			        },
-			        {
-			          	label: 'Docs',
-			          	href: '/docs',
-			          	icon: <Icon name="book" />,
-			        },
-			        {
-			          	label: 'GitHub',
-			          	href: 'https://github.com/SDmodding/TheoryEngine.Docs',
-			          	icon: <Icon name="github" />,
-			        },
-			],
+			]
 		}),
 	],
 });

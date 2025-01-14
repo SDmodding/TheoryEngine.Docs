@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import ThemeRapide from './plugins/theme-rapide'
+import ThemeRapide from './plugins/theme-rapide';
+import mdx from '@astrojs/mdx';
+import vue from '@astrojs/vue';
 
 export default defineConfig({
 	site: 'https://sdmodding.github.io/',
@@ -33,7 +35,13 @@ export default defineConfig({
 					label: 'Quark',
 					autogenerate: { directory: 'quark' },
 				},
-			]
+				{
+					label: 'Test Page',
+					link: '/test'
+				}
+			],
 		}),
-	],
+		mdx(),
+		vue()
+	]
 });

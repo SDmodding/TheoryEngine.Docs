@@ -33,7 +33,7 @@ export default defineConfig({
 					label: 'Quark',
 					autogenerate: { directory: 'quark' },
 				},
-			],
+			]
 		}),
 	],
 });

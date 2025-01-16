@@ -38,6 +38,10 @@ export default defineConfig({
 				{
 					label: 'Test Page',
 					link: '/test'
+				},
+				{
+					label: 'Symbol Dictionaries',
+					autogenerate: { directory: 'symboldictionaries' },
 				}
 			],
 		}),

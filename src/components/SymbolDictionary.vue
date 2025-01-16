@@ -1,6 +1,6 @@
 <template>
     <div v-if="filteredItems.length > 0">
-        <input type="text" v-model="filter" placeholder="Filter by name" />
+        <input type="text" v-model="filter" placeholder="Filter by name or hash" />
         <table>
             <thead>
                 <tr>

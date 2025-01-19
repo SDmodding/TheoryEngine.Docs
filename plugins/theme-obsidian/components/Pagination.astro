@@ -5,7 +5,11 @@ import type { Props } from '@astrojs/starlight/props'
 const { dir, pagination } = Astro.props
 const { prev, next } = pagination
 const isRtl = dir === 'rtl'
+
 ---
+
+{/* CREDITS FOR CODE GO TO: @HiDeoo (original code: https://github.com/HiDeoo/starlight-theme-rapide/blob/main/packages/starlight-theme-rapide/overrides/Pagination.astro) */}
+{/* (STARLIGHT-THEME-OBSIDIAN): Redefine the style of the pagination elements */}
 
 {
   (prev || next) && (
@@ -34,9 +38,7 @@ const isRtl = dir === 'rtl'
 
 <style>
   .pagination-links {
-    border-top: 1px solid var(--sl-color-gray-5);
     display: flex;
-    padding-top: 1.5rem;
   }
 
   .pagination-links a {

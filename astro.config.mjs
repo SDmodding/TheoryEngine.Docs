@@ -4,8 +4,8 @@ import icon from 'astro-icon';
 import ThemeObsidian from "./plugins/theme-obsidian"
 
 export default defineConfig({
-	site: "https://sdmodding.github.io/",
-	base: "TheoryEngine.Docs",
+	site: "http://docs.sdmodding.win",
+	base: "",
 	integrations: [
 		icon(),
 		starlight({

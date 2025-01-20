@@ -17,10 +17,9 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
     <div class="title-wrapper ">
         <SiteTitle {...Astro.props} />
     </div>
+    <MobileMenuFooter {...Astro.props} />
 
     {shouldRenderSearch && <Search {...Astro.props} />}
-
-    <MobileMenuFooter {...Astro.props} />
 </div>
 
 <SidebarPersister {...Astro.props}>

@@ -51,7 +51,7 @@
 }
 
 /* When both sidebars are visible */
-@media (min-width: 72em) {
+@media (min-width: 50em) {
     /* Do not offset any element when navigation has no height */
     :root:not(:has(header)) {
         --sl-nav-height: 0;
@@ -306,6 +306,8 @@
 /* Remove border of mobile preferences */
 .mobile-preferences {
     border-top: unset;
+    margin: 0 0.25rem;
+    padding: 0;
 }
 
 /* Make sidebar only take up viewport height, remove top padding for better scroll behaviour */
@@ -354,7 +356,6 @@
     top: 0;
     z-index: 1;
     background-color: var(--sl-color-bg-nav);
-    border-bottom: solid var(--sl-color-gray-5) 1px;
 
     display: flex;
     flex-direction: column;
@@ -420,7 +421,7 @@ footer {
 .social-icons {
     display: flex;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 0;
 }
 
 .social-icons::after {
@@ -431,6 +432,7 @@ footer {
     div.md\:sl-hidden {
         display: none;
     }
+    border-right: solid var(--sl-color-gray-5) 1px;
 }
 
 /* --------------------------------------------------- */
@@ -736,4 +738,34 @@ body {
         background: transparent;
     }
 }
+
+::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 12px;
+    height: 12px;
+    -webkit-border-radius: 12px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 12px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-width: 3px 3px 3px 2px;
+    min-height: 45px;
+}
+::-webkit-scrollbar-thumb:active {
+    -webkit-border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
 /* ----------------------------------------------------------- */

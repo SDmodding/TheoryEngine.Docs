@@ -6,4 +6,4 @@ editUrl: false
 lastUpdated: false
 ---
 
-![](../../assets/wip.png)
+![](@assets/wip.png)

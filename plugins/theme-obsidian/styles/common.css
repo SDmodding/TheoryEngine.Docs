@@ -369,6 +369,9 @@
     scrollbar-gutter: stable;
 }
 
+.content-panel {
+    padding: 0 var(--sl-content-pad-x);
+}
 
 /* Remove border between page heading and content */
 .content-panel + .content-panel {

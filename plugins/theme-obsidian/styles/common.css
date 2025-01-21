@@ -769,3 +769,53 @@ body {
 }
 
 /* ----------------------------------------------------------- */
+
+input[type=text] {
+    color: var(--sl-color-text) !important;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    background-color: var(--sl-color-black);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    font-size: var(--sl-text-sm);
+    padding-left: 0.75rem !important;
+}
+
+tr {
+    transition: background-color 0.1s linear;
+}
+
+tr:hover {
+    background-color: rgba(147, 115, 221, 0.05);
+}
+
+td, th {
+    width: 1%;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    font-size: var(--sl-text-sm);
+}
+
+th {
+    padding: 0.1rem 0.75rem !important;
+    background-color: var(--sl-color-black);
+    border-top: 1px solid var(--sl-color-gray-5);
+    border-bottom: 1px solid var(--sl-color-gray-5) !important;
+}
+
+td:not(:last-child) {
+    border-right: 1px solid var(--sl-color-gray-5);
+}
+
+thead tr:first-child th:first-child {
+    border-left: 1px solid var(--sl-color-gray-5);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+  
+thead tr:first-child th:last-child {
+    border-right: 1px solid var(--sl-color-gray-5);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

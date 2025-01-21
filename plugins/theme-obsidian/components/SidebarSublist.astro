@@ -66,12 +66,13 @@ const { sublist, nested } = Astro.props;
 		list-style: none;
 		padding: 0;
 	}
-
+	
 	li {
 		overflow-wrap: anywhere;
 	}
 
 	ul ul li {
+		padding-top: 3px;
 		margin-inline-start: var(--sl-sidebar-item-padding-inline);
 		border-inline-start: 1px solid var(--sl-color-hairline-light);
 		padding-inline-start: var(--sl-sidebar-item-padding-inline);
@@ -100,9 +101,9 @@ const { sublist, nested } = Astro.props;
 		cursor: pointer;
 		user-select: none;
 		border-radius: 5px;
-		margin-bottom: 5px;
     	transition: color 0.1s linear, background-color 0.1s linear;
 	}
+	
 	summary:hover {
 		background-color: rgba(100, 100, 100, 0.1);
 	}

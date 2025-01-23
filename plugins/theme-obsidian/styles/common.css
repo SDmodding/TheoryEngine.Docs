@@ -773,7 +773,7 @@ body {
 
 /* ----------------------------------------------------------- */
 
-input[type=text] {
+.content-panel input[type=text] {
     color: var(--sl-color-text) !important;
     margin-bottom: 10px;
     padding: 5px;

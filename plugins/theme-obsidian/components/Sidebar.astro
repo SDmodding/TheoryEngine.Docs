@@ -23,5 +23,23 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
 </div>
 
 <SidebarPersister {...Astro.props}>
+	<div class="sscroll"><div>
 	<SidebarSublist sublist={sidebar} />
+    </div></div>
 </SidebarPersister>
+
+<style>
+	.sscroll {
+		overflow-y: scroll;
+		visibility: hidden;
+		margin-right: -15px;
+
+        > div {    
+		    visibility: visible;
+        }
+	}
+
+    .sscroll:hover {
+        visibility: visible;
+    }
+</style>

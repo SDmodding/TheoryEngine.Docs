@@ -52,7 +52,9 @@ const { sublist, nested } = Astro.props;
 							<Icon name="chevron" class="caret" size="1.25rem"/>
 							
 						</summary>
-						<Astro.self sublist={entry.entries} nested />
+						<div class="slist">
+							<Astro.self sublist={entry.entries} nested />
+						</div>
 					</details>
 				)}
 			</li>
@@ -60,7 +62,51 @@ const { sublist, nested } = Astro.props;
 	}
 </ul>
 
+<script>
+	const details = document.querySelectorAll("details");
+	for (var i = 0; details.length > i; ++i)
+	{
+		const detail = details[i];
+		const list = detail.getElementsByClassName("slist")[0];
+		if (list === undefined) {
+			continue;
+		}
+
+		list.classList.add("js");
+		if (detail.hasAttribute("open")) {	
+			list.classList.add("open");
+		}
+
+		detail.children[0].addEventListener("click", (e) => 
+		{
+			e.stopPropagation();
+			if (detail.hasAttribute("open")) 
+			{
+				e.preventDefault();
+				list.classList.remove("open");
+				setTimeout(() => { detail.removeAttribute("open"); }, 200);
+			}
+			else {
+				list.classList.add("open");
+			}
+		});
+	}
+</script>
+
 <style>
+	.slist.js {	
+ 		display: grid;
+		grid-template-rows: 0fr;
+  		transition: grid-template-rows 0.2s ease-in-out;
+	
+		&.open {
+			grid-template-rows: 1fr;
+		}
+	 	> ul {
+			overflow: hidden;
+		}
+	}
+
 	ul {
 		--sl-sidebar-item-padding-inline: 0.5rem;
 		list-style: none;

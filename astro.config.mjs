@@ -5,7 +5,7 @@ import icon from 'astro-icon';
 import ThemeObsidian from "./plugins/theme-obsidian"
 
 export default defineConfig({
-	site: "http://docs.sdmodding.win",
+	site: "https://docs.sdmodding.win",
 	base: "",
 	integrations: [
 		icon(),

@@ -1,0 +1,91 @@
+---
+interface Props {
+    path: string;
+    list: any[];
+}
+
+const { path, list } = Astro.props;
+
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets"
+
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/**/*.{jpg,png}");
+function GetImage(name) { return images[`${path}/${name}`](); }
+---
+
+<div class="imagesGridWrapper">
+    <input id="searchBox" type="text" placeholder="Search..."/>
+    <ul class="imagesGrid">
+    {list.slice(1).map((item) => (
+        <li>
+            <div>
+                <starlight-image-zoom-zoomable>
+                <Image src={(GetImage(item[0]))} alt={item[1]}/>
+                </starlight-image-zoom-zoomable>
+            </div>
+            {item.slice(1).map((text, index) => (
+                <span><b>{list[0][index + 1]}</b>: {text}</span>
+            ))}
+        </li>
+    ))}
+    </ul>
+</div>
+
+<style>
+    .imagesGrid {
+        display: grid;
+        padding: 0;
+        list-style: none;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+
+        img {
+            border: 1px solid var(--sl-color-gray-5);
+        }
+
+        b {
+            color: #fff;
+        }
+    }
+
+    .imagesGrid > li {
+        display: flex;
+        flex-direction: column;
+		padding: 1em;
+		background-color: var(--sl-color-black);
+        border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.25rem;
+    }
+</style>
+
+<script>
+    const grids = document.getElementsByClassName("imagesGridWrapper");
+    for (var i = 0; grids.length > i; ++i)
+    {
+        const gridDiv = grids[i];
+        const searchBox = gridDiv.getElementsByTagName("input")[0];
+        const gridList = gridDiv.getElementsByTagName("ul")[0];
+    
+        searchBox.addEventListener("input", (event) => 
+        {
+            const query = event.target.value.toLowerCase();
+            for (var i = 0; gridList.children.length > i; ++i)
+            {
+                const gridItem = gridList.children[i];
+                let searchMatches = false;
+                const spans = gridItem.getElementsByTagName("span");
+                for (var j = 0; spans.length > j; ++j)
+                {
+                    const spanText = spans[j].innerText.split(":").slice(-1).join("");
+                    if (spanText.toLowerCase().includes(query))
+                    {
+                        searchMatches = true;
+                        break;
+                    }
+                }
+
+                gridItem.style.display = (searchMatches ? "" : "none");
+            }
+        });
+    }
+</script>

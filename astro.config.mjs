@@ -7,6 +7,9 @@ import ThemeObsidian from "./plugins/theme-obsidian"
 export default defineConfig({
 	site: "https://docs.sdmodding.win",
 	base: "",
+	build: {
+		assets: "_dep"
+	},
 	integrations: [
 		icon(),
 		starlight({

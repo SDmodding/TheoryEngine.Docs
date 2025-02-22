@@ -37,7 +37,7 @@ function GetImage(name) { return images[`${path}/${name}`](); }
         padding: 0;
         list-style: none;
         grid-gap: 1rem;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr 1fr;
 
         img {
             border: 1px solid var(--sl-color-gray-5);
@@ -45,6 +45,18 @@ function GetImage(name) { return images[`${path}/${name}`](); }
 
         b {
             color: #fff;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .imagesGrid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .imagesGrid {
+            grid-template-columns: 1fr;
         }
     }
 

@@ -785,6 +785,16 @@ body {
     padding-left: 0.75rem !important;
 }
 
+table {
+    width: 100%;
+    display: table !important;
+}
+
+thead, tbody {
+    width: 100%;
+    margin: 0 !important;
+}
+
 tr {
     transition: background-color 0.1s linear;
 }
@@ -794,7 +804,6 @@ tr:hover {
 }
 
 td, th {
-    width: 1%;
     padding-left: 8px !important;
     padding-right: 8px !important;
     font-size: var(--sl-text-sm);
@@ -811,13 +820,13 @@ td:not(:last-child) {
     border-right: 1px solid var(--sl-color-gray-5);
 }
 
-thead tr:first-child th:first-child {
+tr:first-child th:first-child {
     border-left: 1px solid var(--sl-color-gray-5);
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 }
   
-thead tr:first-child th:last-child {
+tr:first-child th:last-child {
     border-right: 1px solid var(--sl-color-gray-5);
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;

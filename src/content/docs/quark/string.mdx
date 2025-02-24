@@ -1,0 +1,240 @@
+---
+title: String
+description: lol
+template: doc
+---
+
+import { Code } from '@astrojs/starlight/components';
+
+<pre>UFG::qString</pre>
+
+String is UTF-8 based string class. By default, String allocates memory from main memory pool.
+
+## Methods
+
+| Method | Description |
+| ------ | ----------- |
+| [find](#find) | Returns index of the first character of the given text. |
+| [Format](#format) | Format arguments according to the format string. |
+| [ReplaceExtension](#replaceextension) | Returns a new string with replaced extension. |
+| [ReplaceCharInPlace](#replacecharinplace) | Replace all characters with the given character. |
+| [ReplaceString](#replacestring) | Replace a text with the given text. |
+| [Substring](#substring) | Returns a substring ([start, start + length]). |
+| [StartsWith](#startswith) | Checks if the string begins with the given text. |
+| [EndsWith](#endswith) | Checks if the string ends with the given text. |
+| [Trim](#trim) | Returns a new string with whitespace trimmed. |
+| [MakeLower](#makelower) | Converts the character string to lowercase. |
+| [MakeUpper](#makeupper) | Converts the character string to uppercase. |
+| [ToLower](#tolower) | Returns a new string converted to lowercase. |
+| [ToUpper](#toupper) | Returns a new string converted to uppercase. |
+| [GetFilePath](#getfilepath) | Returns a new string with file path. |
+| [GetFilePathWithoutExtension](#getfilepathwithoutextension) | Returns a new string with file path without extension. |
+| [GetFilename](#getfilename) | Returns a new string with file name. |
+| [GetFilenameWithoutExtension](#getfilenamewithoutextension) | Returns a new string with file name without extension. |
+
+#### find
+
+```cpp
+int find(const char* str);
+```
+
+Example:
+```cpp
+qString str = "filename.perm.bin";
+str.find(".perm.bin"); // 8 (found) 
+str.find(".temp.bin"); // -1 (fail to find)
+```
+
+#### Format
+
+```cpp
+template <typename... Args>
+void Format(const char* format, Args... args);
+```
+
+Example:
+```cpp
+qString str;
+str.Format("%s: %d", "Value", 123); // str -> "Value: 123"
+```
+
+#### ReplaceExtension
+
+```cpp
+qString ReplaceExtension(const char* ext);
+```
+
+Example:
+```cpp
+qString str = "filename.txt";
+str.ReplaceExtension(".bin"); // "filename.bin"
+```
+
+#### ReplaceCharInPlace
+
+```cpp
+int ReplaceCharInPlace(char search_char, char replace_char);
+```
+
+Example:
+```cpp
+qString str = "111bbbccc";
+str.ReplaceCharInPlace('1', 'a'); // 3 (str -> "aaabbbccc")
+```
+
+#### ReplaceString
+
+```cpp
+bool ReplaceString(const char* find_text, const char* replace_text, bool ignore_case = false);
+```
+
+Example:
+```cpp
+qString str = "abcdef";
+str.ReplaceString("abc", "123"); // true (str -> "123def")
+```
+
+#### Substring
+
+```cpp
+qString Substring(int start, int length);
+```
+Example:
+```cpp
+qString str = "filename.perm.bin";
+str.Substring(4, 4); // "name"
+```
+
+#### StartsWith
+
+```cpp
+bool StartsWith(const char* text, int length = -1);
+```
+
+Example:
+```cpp
+qString str = "filename.perm.bin";
+str.StartsWith("file"); // true
+str.StartsWith("name"); // false
+```
+
+#### EndsWith
+
+```cpp
+bool EndsWith(const char* text, int length = -1);
+```
+
+Example:
+```cpp
+qString str = "filename.perm.bin";
+str.EndsWith(".bin");   // true
+str.EndsWith(".perm");  // false
+```
+
+#### Trim
+
+```cpp
+qString Trim();
+```
+
+Example:
+```cpp
+qString str = "    test1234    ";
+str.Trim(); // "test1234"
+```
+
+#### MakeLower
+
+```cpp
+void MakeLower();
+```
+
+Example:
+```cpp
+qString str = "abc123DEF";
+str.MakeLower(); // str -> "abc123def"
+```
+
+#### MakeUpper
+
+```cpp
+void MakeUpper();
+```
+
+Example:
+```cpp
+qString str = "abc123DEF";
+str.MakeUpper(); // str -> "ABC123DEF"
+```
+
+#### ToLower
+
+```cpp
+qString ToLower();
+```
+
+Example:
+```cpp
+qString str = "abc123DEF";
+str.ToLower(); // "abc123def"
+```
+
+#### ToUpper
+
+```cpp
+qString ToUpper();
+```
+
+Example:
+```cpp
+qString str = "abc123DEF";
+str.ToUpper(); // "ABC123DEF"
+```
+
+#### GetFilePath
+
+```cpp
+qString GetFilePath();
+```
+
+Example:
+```cpp
+qString str = "some/path/to/filename.bin";
+str.GetFilePath(); // "some/path/to"
+```
+
+#### GetFilePathWithoutExtension
+
+```cpp
+qString GetFilePathWithoutExtension();
+```
+
+Example:
+```cpp
+qString str = "some/path/to/filename.bin";
+str.GetFilePathWithoutExtension(); // "some/path/to/filename"
+```
+
+#### GetFilename
+
+```cpp
+qString GetFilename();
+```
+
+Example:
+```cpp
+qString str = "some/path/to/filename.bin";
+str.GetFilename(); // "filename.bin"
+```
+
+#### GetFilenameWithoutExtension
+
+```cpp
+qString GetFilenameWithoutExtension();
+```
+
+Example:
+```cpp
+qString str = "some/path/to/filename.bin";
+str.GetFilenameWithoutExtension(); // "filename"
+```

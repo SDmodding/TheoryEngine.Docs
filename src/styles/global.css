@@ -22,3 +22,17 @@
     --sl-text-5xl: 2.4rem;
     --sl-text-6xl: 4rem;
 }
+
+.sl-markdown-content {
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.expressive-code .ec-line {
+    margin: 0;
+}

@@ -33,7 +33,7 @@ export default defineConfig({
         	head: [
         	    {
         	        tag: "meta",
-        	        attrs: { property: "og:image", content: "https://raw.githubusercontent.com/SDmodding/TheoryEngine.Docs/refs/heads/main/src/assets/logo.png" },
+        	        attrs: { property: "og:image", content: "https://raw.githubusercontent.com/SDmodding/TheoryEngine.Docs/refs/heads/main/public/logobg.png" },
         	    }
         	],
         	social: {

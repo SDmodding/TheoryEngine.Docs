@@ -26,8 +26,12 @@ delete list.headers;
                 {items.map((item) => (
                     <li 
                         data-category={category.toLowerCase()}
-                        data-name={item[1].toLowerCase()}
-                        data-hash={item[2].toLowerCase()}
+                        {...Object.fromEntries(
+                            item.slice(1).map((text, index) => [
+                                `data-${headers[index + 1].toLowerCase()}`,
+                                text.toLowerCase()
+                            ])
+                        )}
                     >
                         <div>
                             <starlight-image-zoom-zoomable>
@@ -99,13 +103,11 @@ delete list.headers;
         const categories = document.querySelectorAll(".category-section");
         const items = document.querySelectorAll(".imagesGrid > li");
 
-        const searchIndex = {};
+        const searchIndex = [];
+
         items.forEach(item => {
-            const name = item.dataset.name;
-            const hash = item.dataset.hash;
-            const category = item.dataset.category;
-            searchIndex[hash] = { item, category };
-            searchIndex[name] = { item, category };
+            const datasetValues = Object.values(item.dataset);
+            searchIndex.push({ item, datasetValues, category: item.dataset.category });
         });
 
         searchBox.addEventListener("input", (event) => {
@@ -114,9 +116,9 @@ delete list.headers;
 
             items.forEach(item => (item.style.display = "none"));
 
-            Object.keys(searchIndex).forEach(key => {
-                if (key.includes(query)) {
-                    const { item, category } = searchIndex[key];
+            searchIndex.forEach(({ item, datasetValues, category }) => {
+                // Check if any dataset value contains the query
+                if (datasetValues.some(value => value.includes(query))) {
                     item.style.display = "flex";
                     visibleCategories.add(category);
                 }

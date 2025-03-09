@@ -32,10 +32,15 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
 	.sscroll {
 		overflow-y: scroll;
 		visibility: hidden;
-		margin-right: -15px;
+        padding-right: 3px;
+		margin-right: -12px;
 
         > div {    
 		    visibility: visible;
+        }
+        
+        &::-webkit-scrollbar {
+            width: 10px;
         }
 	}
 

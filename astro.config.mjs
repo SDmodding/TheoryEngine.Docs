@@ -47,6 +47,7 @@ export default defineConfig({
         	sidebar: [
         	    { label: "[book] Quark", collapsed: true, autogenerate: { directory: "quark" } },
         	    { label: "[cube] Illusion", collapsed: true, autogenerate: { directory: "illusion" } },
+        	    { label: "[card-ui] UI", collapsed: true, autogenerate: { directory: "ui" } },
         	    { label: "[gamepad] Sleeping Dogs", collapsed: true, autogenerate: { directory: "sd" } },
         	]
 		})

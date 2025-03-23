@@ -1,0 +1,29 @@
+---
+title: GFx Translator
+template: doc
+---
+
+<pre>UFG::UIGfxTranslator</pre>
+
+UIGfxTranslator is an extension of the [Scaleform::GFx::Translator](https://help.autodesk.com/view/SCLFRM/ENU/?guid=__cpp_ref_01622_html) class, which handles translation for the game's dictionary map.
+- All dictionaries are loaded from files that contains `UILocalizationChunk`.
+
+
+## Methods
+
+| Method | Description |
+| ------ | ----------- |
+| [Translate](#translate) | Returns index of the first character of the given text. |
+
+#### Translate
+
+```cpp
+const char* Translate(uint32_t hash);
+```
+
+Example:
+```cpp
+// UFG::qStringHash32("SGTITLE_UNCLE_PO")
+const char* str0 = m_translator->Translate(0xA0A751E2); // "UNCLE PO" (English Translation)
+const char* str1 = m_translator->Translate(0x12345678); // nullptr (failed to find)
+```

@@ -1,0 +1,131 @@
+---
+title: Overview
+---
+
+The `Simulation` class manages all `SimObject` instances in the game. It provides functions to create, destroy, and track simulation objects.
+
+## Members
+
+| Members | Description |
+| ------ | ----------- |
+| [mSimObjects](#msimobjects) | Stores all active simulation objects. |
+| [mSimObjectsToBeDeleted](#msimobjectstobedeleted) | Stores objects queued for deletion. |
+| [mSimObjectsToBeDeletedRecursively](#msimobjectstobedeletedrecursively) | Stores objects queued for recursive deletion. |
+| [mpLocalPlayer](#mplocalplayer) | A safe pointer to the local player object. |
+| [m_aCurrentDestructingObjects](#macurrentdestructingobjects) | Stores currently destructing objects. |
+
+## Methods
+
+| Method | Description |
+| ------ | ----------- |
+| [Instance](#instance) | Returns the singleton instance of the `Simulation` class. |
+| [CreateSimObject](#createsimobject) | Creates a new simulation object with the specified name. |
+| [DestroyAllSimObjects](#destroyallsimobjects) | Destroys all active simulation objects. |
+| [DestroyQueuedSimObjects](#destroyqueuedsimobjects) | Destroys all simulation objects that have been queued for deletion. |
+| [DestroySimComponent](#destroysimcomponent) | Destroys a specific simulation component. |
+| [DestroySimObject](#destroysimobject) | Destroys a specific simulation object. |
+| [GenerateUniqueName](#generateuniquename) | Generates a unique name based on the provided root symbol. |
+| [GenerateUniqueName](#generateuniquename) | Generates a unique name based on the provided root string. |
+| [GetSimObject](#getsimobject) | Retrieves a simulation object by its `qSymbol` name. |
+| [GetSimObject](#getsimobject) | Retrieves a simulation object by its `u32` unique identifier. |
+| [QueueSimObjectToBeDestroyed](#queuesimobjecttobedestroyed) | Queues a simulation object for deletion. |
+| [QueueSimObjectToBeDestroyedRecursive](#queuesimobjecttobedestroyedrecursive) | Queues a simulation object for recursive deletion. |
+| [QueueTrackedSimObjectToBeDestroyed](#queuetrackedsimobjecttobedestroyed) | Queues a tracked simulation object for deletion. |
+| [TrackSimObject](#tracksimobject) | Tracks a simulation object. |
+| [UntrackSimObject](#untracksimobject) | Stops tracking a simulation object and returns whether the untracking was successful. |
+
+
+#### Instance
+
+```cpp
+const char* Instance();
+```
+
+#### CreateSimObject
+
+```cpp
+SimObject* CreateSimObject(const qSymbol& name);
+```
+
+#### DestroyAllSimObjects
+
+```cpp
+void DestroyAllSimObjects();
+```
+
+### DestroyQueuedSimObjects
+
+```cpp
+void DestroyQueuedSimObjects();
+```
+
+### DestroySimComponent
+
+```cpp
+void DestroySimComponent(SimComponent* component);
+```
+
+### DestroySimObject
+
+```cpp
+void DestroySimObject(SimObject* object);
+```
+
+### GenerateUniqueName
+
+```cpp
+qSymbol GenerateUniqueName(const qSymbol& root);
+```
+
+### GenerateUniqueName
+
+```cpp
+qSymbol GenerateUniqueName(const char* root);
+```
+
+### GetSimObject
+
+```cpp
+SimObject* GetSimObject(const qSymbol& name);
+```
+
+### GetSimObject
+
+```cpp
+SimObject* GetSimObject(u32 name_uid);
+```
+
+### QueueSimObjectToBeDestroyed
+
+```cpp
+void QueueSimObjectToBeDestroyed(SimObject* pSimObj);
+```
+
+### QueueSimObjectToBeDestroyedRecursive
+
+```cpp
+void QueueSimObjectToBeDestroyedRecursive(SimObject* pSimObj);
+```
+
+### QueueTrackedSimObjectToBeDestroyed
+
+```cpp
+void QueueTrackedSimObjectToBeDestroyed(SimObject* pSimObj);
+```
+
+### TrackSimObject
+
+```cpp
+void TrackSimObject(SimObject* pSimObj);
+```
+
+### UntrackSimObject
+
+```cpp
+bool UntrackSimObject(SimObject* pSimObj)
+```
+
+## Notes
+- This class is primarily used to manage game entities dynamically.
+- It provides an efficient way to handle object creation, tracking, and destruction within a simulated environment.
+
